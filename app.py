@@ -67,24 +67,41 @@ if "Light Mode" in st.session_state.theme:
             --glass-border: rgba(14, 165, 233, 0.12) !important;
             --bot-bubble-bg: rgba(226, 232, 240, 0.85) !important;
             --user-bubble-bg: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%) !important;
-            
+
             /* Theme color overrides for light mode readability */
+            --text-color: #1E293B !important;
             --text-main: #1E293B !important;
             --text-muted: #475569 !important;
+            --text-on-primary: #F8FAFC !important;
             --card-bg: rgba(255, 255, 255, 0.92) !important;
             --card-border: rgba(14, 165, 233, 0.12) !important;
+            --card-hover-bg: rgba(14, 165, 233, 0.06) !important;
+            --user-meta-color: rgba(248, 250, 252, 0.7) !important;
+            --user-avatar-bg: #334155 !important;
+
+            --btn-bg: rgba(255, 255, 255, 0.95) !important;
+            --btn-text: #1E293B !important;
+            --btn-border: #E2E8F0 !important;
+            --btn-hover-bg: #F1F5F9 !important;
+            --btn-hover-border: #CBD5E1 !important;
+
+            --input-bg: rgba(255, 255, 255, 0.95) !important;
+            --input-border: #E2E8F0 !important;
+            --placeholder-color: #64748B !important;
+            --footer-color: #64748B !important;
+            --footer-border: rgba(14, 165, 233, 0.12) !important;
         }
         .chat-bubble-bot .bubble-content { color: var(--text-main) !important; }
         .chat-bubble-bot .bubble-meta { color: var(--text-muted) !important; }
-        .chat-bubble-user .bubble-content { color: #FFFFFF !important; }
-        .chat-bubble-user .bubble-meta { color: rgba(255, 255, 255, 0.6) !important; }
-        .stApp { background-color: #F8FAFC !important; color: #1E293B !important; }
+        .chat-bubble-user .bubble-content { color: var(--text-on-primary) !important; }
+        .chat-bubble-user .bubble-meta { color: var(--user-meta-color) !important; }
+        .stApp { background-color: var(--bg-light) !important; color: var(--text-main) !important; }
         </style>
     """, unsafe_allow_html=True)
 else:
     st.markdown("""
         <style>
-        .stApp { background-color: #0F172A !important; color: #F1F5F9 !important; }
+        .stApp { background-color: var(--bg-dark) !important; color: var(--text-main) !important; }
         </style>
     """, unsafe_allow_html=True)
 
@@ -97,9 +114,7 @@ with st.sidebar:
         st.image(str(logo_path), width=75)
     else:
         st.markdown("""
-            <div style='background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%); width: 64px; height: 64px; 
-                         border-radius: 12px; display: flex; align-items: center; justify-content: center; 
-                         font-size: 28px; color: white; font-weight: bold; margin-bottom: 12px; box-shadow: 0 4px 10px rgba(14, 165, 233, 0.3);'>
+            <div class='logo-fallback'>
                 EQ
             </div>
         """, unsafe_allow_html=True)
@@ -216,7 +231,7 @@ if menu == "💬 AI Chat Copilot":
     if not st.session_state.messages:
         st.markdown("""
             <div class='glass-container' style='text-align: left; max-width: 800px; margin-bottom: 2rem;'>
-                <h4 style='margin-top:0; color:#38BDF8; font-weight:600;'>Welcome to the Student Academic Portal Copilot! 👋</h4>
+                <h4 class='section-heading'>Welcome to the Student Academic Portal Copilot! 👋</h4>
                 <p style='font-size:0.92rem; line-height:1.6; color:var(--text-muted);'>
                     I am an NLP-powered chatbot designed to resolve queries regarding college operations instantly. 
                     Search for topics using conversational sentences. Or click any common template chip below.
@@ -266,7 +281,7 @@ if menu == "💬 AI Chat Copilot":
         current_suggestions = config.SUGGESTED_QUESTIONS[:4]
         
     if current_suggestions:
-        st.markdown("<p style='font-size:0.8rem; margin: 1.5rem 0 0.2rem 0; color:#64748B; font-weight:600;'>SUGGESTED FOLLOW-UP QUESTIONS:</p>", unsafe_allow_html=True)
+        st.markdown("<p class='suggestions-label'>SUGGESTED FOLLOW-UP QUESTIONS:</p>", unsafe_allow_html=True)
         cols = st.columns(len(current_suggestions))
         for idx, sug in enumerate(current_suggestions):
             with cols[idx]:
@@ -406,13 +421,13 @@ else:
     
     st.markdown("""
         <div class='glass-container'>
-            <h4 style='margin-top:0; color:#38BDF8; font-weight:600;'>System Intentions & Objectives 🎯</h4>
+            <h4 class='section-heading'>System Intentions & Objectives 🎯</h4>
             <p style='font-size:0.95rem; line-height:1.6; color:var(--text-main); margin-bottom:1.5rem;'>
                 Developed for an academic internship review board, this project models an advanced student affairs 
                 copilot. It solves high-volume, repetitive inquiries regarding campus guidelines and enrollment 
                 schedules instantly, reducing workload on institutional administration.
             </p>
-            <h4 style='color:#38BDF8; font-weight:600;'>NLP Pre-processing & Similarity Logic ⚙️</h4>
+            <h4 class='section-heading'>NLP Pre-processing & Similarity Logic ⚙️</h4>
             <ul style='font-size:0.92rem; line-height:1.7; color:var(--text-main);'>
                 <li><b>Text Normalization</b>: Lowercases characters, strips punctuation, and matches regex spaces.</li>
                 <li><b>NLTK Word Tokenization</b>: Segmenting conversational paragraphs into semantic term matrices.</li>
@@ -423,7 +438,7 @@ else:
         </div>
         
         <div class='glass-container' style='margin-top:-0.5rem;'>
-            <h4 style='margin-top:0; color:#38BDF8; font-weight:600;'>Platform Capabilities ⚡</h4>
+            <h4 class='section-heading'>Platform Capabilities ⚡</h4>
             <div class='faq-grid'>
                 <div class='faq-card'>
                     <div class='faq-card-title'>⚡ Ultra Fast Matches</div>
@@ -445,7 +460,7 @@ else:
         </div>
         
         <div class='glass-container' style='margin-top:-0.5rem;'>
-            <h4 style='margin-top:0; color:#38BDF8; font-weight:600;'>Tech Stack Breakdown 🛠️</h4>
+            <h4 class='section-heading'>Tech Stack Breakdown 🛠️</h4>
             <ul style='font-size:0.90rem; line-height:1.7; color:var(--text-main);'>
                 <li><b>Frontend Framework</b>: Streamlit web framework</li>
                 <li><b>Styling Extensions</b>: HTML5, CSS Variables, and Javascript custom injection</li>
@@ -453,7 +468,7 @@ else:
                 <li><b>String Comparison</b>: RapidFuzz / FuzzyWuzzy / Difflib</li>
                 <li><b>Logs & Dashboards</b>: Pandas, Plotly Express & Graph Objects</li>
             </ul>
-            <h4 style='color:#38BDF8; font-weight:600; margin-top:2rem;'>Developer and License Information 📝</h4>
+            <h4 class='section-heading-spaced'>Developer and License Information 📝</h4>
             <p style='font-size:0.90rem; line-height:1.6; color:var(--text-muted);'>
                 <b>Author</b>: Antigravity Dev Team & Student Intern<br>
                 <b>System Version</b>: v2.1.0-Beta<br>
@@ -467,6 +482,6 @@ else:
 st.markdown(f"""
     <div class='footer-text'>
         CHINGU AI • {datetime.now().year} • Created with Python & Streamlit • Developer Team Internship Submission<br>
-        <span style='font-size:0.75rem; color:#475569;'>Responsive HTML5 | PEP8 Checked | Glassmorphic design</span>
+        <span class='footer-meta'>Responsive HTML5 | PEP8 Checked | Glassmorphic design</span>
     </div>
 """, unsafe_allow_html=True)

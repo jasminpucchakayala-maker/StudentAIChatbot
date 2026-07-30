@@ -3,6 +3,7 @@
 :root {
     --primary: #0EA5E9;
     --primary-gradient: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
+    --accent: #38BDF8;
     --bg-dark: #0F172A;
     --bg-light: #F8FAFC;
     --text-dark: #F1F5F9;
@@ -13,16 +14,49 @@
     --user-bubble-bg: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
     --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
     
-    /* Theme color adaptation variables */
+    /* Theme-adaptive text & surface colors (dark defaults) */
+    --text-color: #E2E8F0;
     --text-main: #E2E8F0;
     --text-muted: #94A3B8;
+    --text-on-primary: #F8FAFC;
     --card-bg: rgba(15, 23, 42, 0.45);
     --card-border: rgba(255, 255, 255, 0.05);
+    --card-hover-bg: rgba(255, 255, 255, 0.05);
+    --user-meta-color: rgba(248, 250, 252, 0.55);
+    --user-avatar-bg: #1E293B;
+
+    /* Buttons */
+    --btn-bg: rgba(255, 255, 255, 0.08);
+    --btn-text: var(--text-main);
+    --btn-border: rgba(255, 255, 255, 0.14);
+    --btn-hover-bg: rgba(255, 255, 255, 0.14);
+    --btn-hover-border: rgba(255, 255, 255, 0.22);
+
+    /* Inputs / chat input */
+    --input-bg: rgba(15, 23, 42, 0.55);
+    --input-border: rgba(255, 255, 255, 0.12);
+    --input-focus-border: var(--primary);
+    --placeholder-color: var(--text-muted);
+
+    /* Footer */
+    --footer-color: var(--text-muted);
+    --footer-border: var(--card-border);
 }
 
 /* Global Font Settings */
 html, body, [class*="css"] {
     font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+
+/* Inherit theme text color across Streamlit content */
+.stApp, .stApp p, .stApp span, .stApp label,
+.stApp [data-testid="stMarkdownContainer"],
+.stApp [data-testid="stWidgetLabel"] {
+    color: inherit;
+}
+
+.stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp h5, .stApp h6 {
+    color: var(--text-main);
 }
 
 /* Custom Scrollbar */
@@ -53,6 +87,7 @@ html, body, [class*="css"] {
     margin-bottom: 1.5rem;
     box-shadow: var(--card-shadow);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--text-main);
 }
 .glass-container:hover {
     border-color: rgba(14, 165, 233, 0.3);
@@ -64,16 +99,55 @@ html, body, [class*="css"] {
     background: linear-gradient(90deg, #38BDF8 0%, #0EA5E9 50%, #06B6D4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-weight: 800;
     font-size: 2.2rem;
     letter-spacing: -0.5px;
     margin-bottom: 0.2rem;
 }
 .gradient-subtitle {
-    color: #94A3B8;
+    color: var(--text-muted);
     font-size: 1.05rem;
     margin-bottom: 1.5rem;
     font-weight: 400;
+}
+
+/* Section headings used in custom HTML cards */
+.section-heading {
+    color: var(--accent);
+    font-weight: 600;
+}
+.glass-container > .section-heading:first-child {
+    margin-top: 0;
+}
+.section-heading-spaced {
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+/* Logo fallback badge (text sits on primary gradient) */
+.logo-fallback {
+    background: var(--primary-gradient);
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: var(--text-on-primary);
+    font-weight: bold;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 10px rgba(14, 165, 233, 0.3);
+}
+
+/* Suggested follow-up label */
+.suggestions-label {
+    font-size: 0.8rem;
+    margin: 1.5rem 0 0.2rem 0;
+    color: var(--text-muted);
+    font-weight: 600;
 }
 
 /* Metrical Data Panels */
@@ -91,6 +165,7 @@ html, body, [class*="css"] {
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease;
+    color: var(--text-main);
 }
 .metric-card:hover {
     transform: translateY(-3px);
@@ -148,14 +223,14 @@ html, body, [class*="css"] {
     align-items: center;
     justify-content: center;
     font-size: 1.1rem;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid var(--glass-border);
 }
 .chat-bubble-bot .chat-avatar {
     background: #0284C7;
     box-shadow: 0 0 10px rgba(14, 165, 233, 0.3);
 }
 .chat-bubble-user .chat-avatar {
-    background: #111827;
+    background: var(--user-avatar-bg);
     margin-right: 0;
     margin-left: 0.75rem;
     order: 2;
@@ -179,14 +254,14 @@ html, body, [class*="css"] {
 }
 .chat-bubble-user .bubble-content {
     background: var(--user-bubble-bg);
-    color: #FFFFFF;
+    color: var(--text-on-primary);
     border-top-right-radius: 4px;
     order: 1;
 }
 
 .bubble-meta {
     font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.45);
+    color: var(--user-meta-color);
     margin-top: 0.35rem;
     text-align: right;
     display: block;
@@ -204,20 +279,21 @@ html, body, [class*="css"] {
     margin-bottom: 1.5rem;
 }
 .suggestion-btn {
-    background: #ffffff;
-    color: #111827 !important;
+    background: var(--btn-bg);
+    color: var(--btn-text) !important;
     opacity: 1 !important;
     font-size: 15px;
     font-weight: 500;
-    border: none;
+    border: 1px solid var(--btn-border);
     border-radius: 14px;
     padding: 16px 20px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 .suggestion-btn:hover {
-    background: #f3f4f6;
-    color: #111827;
+    background: var(--btn-hover-bg);
+    color: var(--btn-text);
+    border-color: var(--btn-hover-border);
     transform: translateY(-2px);
 }
 
@@ -234,16 +310,17 @@ html, body, [class*="css"] {
     border-radius: 12px;
     padding: 1rem;
     transition: all 0.25s ease;
+    color: var(--text-main);
 }
 .faq-card:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-hover-bg);
     border-color: rgba(14, 165, 233, 0.25);
     transform: scale(1.02);
 }
 .faq-card-title {
     font-size: 0.95rem;
     font-weight: 600;
-    color: #38BDF8;
+    color: var(--accent);
     margin-bottom: 0.35rem;
     display: flex;
     align-items: center;
@@ -291,7 +368,7 @@ html, body, [class*="css"] {
 .typing-dot {
     width: 6px;
     height: 6px;
-    background-color: #94A3B8;
+    background-color: var(--text-muted);
     border-radius: 50%;
     animation: typingBounce 1.4s infinite ease-in-out both;
 }
@@ -305,54 +382,147 @@ html, body, [class*="css"] {
 /* Footer layout */
 .footer-text {
     font-size: 0.8rem;
-    color: #64748B;
+    color: var(--footer-color);
     text-align: center;
     margin-top: 3rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid var(--footer-border);
 }
 .footer-text a {
-    color: #38BDF8;
+    color: var(--accent);
     text-decoration: none;
 }
 .footer-text a:hover {
     text-decoration: underline;
 }
+.footer-meta {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
 
 /* Streamlit specific components overriding */
 div[data-testid="stButton"] > button,
-.stButton>button {
+.stButton > button {
     border-radius: 8px !important;
     font-weight: 500 !important;
     transition: all 0.2s ease !important;
-    background-color: #FFFFFF !important;
-    color: #111827 !important;
-    border: 1px solid #E5E7EB !important;
+    background-color: var(--btn-bg) !important;
+    color: var(--btn-text) !important;
+    border: 1px solid var(--btn-border) !important;
     box-shadow: none !important;
 }
 div[data-testid="stButton"] > button:hover,
-.stButton>button:hover {
-    background-color: #F3F4F6 !important;
-    color: #111827 !important;
-    border-color: #D1D5DB !important;
+.stButton > button:hover {
+    background-color: var(--btn-hover-bg) !important;
+    color: var(--btn-text) !important;
+    border-color: var(--btn-hover-border) !important;
 }
 div[data-testid="stButton"] > button:focus,
 div[data-testid="stButton"] > button:active,
-.stButton>button:focus,
-.stButton>button:active {
-    border-color: #0EA5E9 !important;
+.stButton > button:focus,
+.stButton > button:active {
+    border-color: var(--primary) !important;
     box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2) !important;
+    color: var(--btn-text) !important;
 }
-.stDownloadButton>button {
+div[data-testid="stButton"] > button p,
+div[data-testid="stButton"] > button span,
+.stButton > button p,
+.stButton > button span {
+    color: inherit !important;
+}
+
+.stDownloadButton > button {
     border-radius: 8px !important;
     background: rgba(14, 165, 233, 0.1) !important;
-    color: #38BDF8 !important;
+    color: var(--accent) !important;
     border: 1px solid rgba(14, 165, 233, 0.25) !important;
     width: 100%;
 }
-.stDownloadButton>button:hover {
+.stDownloadButton > button:hover {
     background: rgba(14, 165, 233, 0.2) !important;
-    border-color: #38BDF8 !important;
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+}
+.stDownloadButton > button p,
+.stDownloadButton > button span {
+    color: inherit !important;
+}
+
+/* Text inputs, textareas, chat input */
+.stTextInput input,
+.stTextArea textarea,
+div[data-testid="stTextInput"] input,
+div[data-testid="stTextArea"] textarea,
+[data-testid="stChatInput"] textarea,
+[data-testid="stChatInput"] input,
+[data-baseweb="textarea"],
+[data-baseweb="input"] input,
+textarea,
+input[type="text"],
+input[type="search"] {
+    background-color: var(--input-bg) !important;
+    color: var(--text-main) !important;
+    border-color: var(--input-border) !important;
+    caret-color: var(--text-main) !important;
+}
+
+.stTextInput input:focus,
+.stTextArea textarea:focus,
+div[data-testid="stTextInput"] input:focus,
+div[data-testid="stTextArea"] textarea:focus,
+[data-testid="stChatInput"] textarea:focus,
+[data-testid="stChatInput"] input:focus,
+textarea:focus,
+input[type="text"]:focus,
+input[type="search"]:focus {
+    border-color: var(--input-focus-border) !important;
+    box-shadow: 0 0 0 1px var(--input-focus-border) !important;
+    color: var(--text-main) !important;
+}
+
+/* Chat input container shell */
+[data-testid="stChatInput"],
+[data-testid="stChatInput"] > div,
+[data-testid="stChatInput"] [data-baseweb="base-input"] {
+    background-color: var(--input-bg) !important;
+    color: var(--text-main) !important;
+    border-color: var(--input-border) !important;
+}
+
+[data-testid="stChatInput"] button,
+[data-testid="stChatInputSubmitButton"] {
+    color: var(--accent) !important;
+}
+
+/* Placeholders — both themes */
+::placeholder,
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder {
+    color: var(--placeholder-color) !important;
+    opacity: 0.85 !important;
+}
+
+[data-testid="stChatInput"] textarea::placeholder,
+[data-testid="stChatInput"] input::placeholder,
+.stTextInput input::placeholder,
+.stTextArea textarea::placeholder {
+    color: var(--placeholder-color) !important;
+    opacity: 0.85 !important;
+}
+
+/* Selectbox / radio labels inherit theme text */
+.stSelectbox label,
+.stRadio label,
+.stTextInput label,
+div[data-testid="stWidgetLabel"] p {
+    color: var(--text-main) !important;
+}
+
+div[data-baseweb="select"] > div,
+div[data-baseweb="select"] span {
+    color: var(--text-main) !important;
 }
 
 /* Quick reply selection */
