@@ -124,26 +124,39 @@ with st.sidebar:
     st.markdown("---")
     
     # Navigation Selector
+    st.markdown(
+        "<div class='sidebar-section-heading'><span class='heading-icon'>🧭</span>Navigate Platform</div>",
+        unsafe_allow_html=True,
+    )
     menu = st.radio(
         "Navigate Platform",
         ["💬 AI Chat Copilot", "📊 Analytics Dashboard", "📋 Intent Log Table", "ℹ️ About & Reference"],
-        index=0
+        index=0,
+        label_visibility="collapsed",
     )
     
     st.markdown("---")
     
     # Themes & Display Controls
+    st.markdown(
+        "<div class='sidebar-section-heading'><span class='heading-icon'>🎨</span>Aesthetic Theme Style</div>",
+        unsafe_allow_html=True,
+    )
     selected_theme = st.selectbox(
         "Aesthetic Theme Style",
         ["🌌 Dark Mode", "☀️ Light Mode"],
-        index=0 if "Dark" in st.session_state.theme else 1
+        index=0 if "Dark" in st.session_state.theme else 1,
+        label_visibility="collapsed",
     )
     if selected_theme != st.session_state.theme:
         st.session_state.theme = selected_theme
         st.rerun()
 
     # Session Activity Details
-    st.markdown("##### Session Diagnostics")
+    st.markdown(
+        "<div class='sidebar-section-heading'><span class='heading-icon'>💓</span>Session Diagnostics</div>",
+        unsafe_allow_html=True,
+    )
     live_time = datetime.now().strftime("%I:%M %p")
     st.markdown(f"""
         <div class='status-pill'>
