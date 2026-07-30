@@ -1,0 +1,540 @@
+{
+  "intents": [
+    {
+      "tag": "admissions",
+      "patterns": [
+        "how to apply for admission",
+        "admission process",
+        "join the college",
+        "apply online",
+        "how can i get admission",
+        "what is the admission criteria",
+        "registration procedure",
+        "undergraduate admission",
+        "postgraduate admission eligibility",
+        "what documents are required for admission",
+        "is admission open",
+        "when is the last date to apply"
+      ],
+      "responses": [
+        "Admissions can be completed online via our admission portal. The general process includes: 1) Fill the online registration form, 2) Upload your educational transcripts, and 3) Pay the registration fee. Eligible candidates will receive an email offer letter. Visit: https://college.edu/admissions.",
+        "Admission is open for undergraduate and postgraduate courses. Minimum eligibility ranges from 50% to 60% depending on the field of study. You need documents such as 10th/12th marksheets, ID proof, and transfer certificates. Apply at our Admission portal online."
+      ],
+      "suggestions": [
+        "What are the eligibility criteria?",
+        "When is the application deadline?",
+        "What documents are needed?"
+      ]
+    },
+    {
+      "tag": "courses",
+      "patterns": [
+        "what courses are offered",
+        "list of courses",
+        "programs available",
+        "list of degrees",
+        "majors offered",
+        "pg or ug courses",
+        "options for studying",
+        "what can i study here",
+        "tell me about courses",
+        "which branches are present in engineering",
+        "academic programs list"
+      ],
+      "responses": [
+        "We offer Undergraduate (B.Tech, BCA, B.Sc, B.Com, BBA) and Postgraduate (M.Tech, MCA, MBA, M.Sc) programs in various engineering, science, business administration, commerce, and computer application streams.",
+        "Courses offered include Computer Science, Information Technology, Electronics & Communication, Mechanical, Civil Engineering, MBA in Finance/HR/Marketing, MCA, and multiple stream B.Sc and B.Com options."
+      ],
+      "suggestions": [
+        "What is the duration of BCA?",
+        "Do you have MBA programs?",
+        "Tell me about engineering branches."
+      ]
+    },
+    {
+      "tag": "fees",
+      "patterns": [
+        "what is the fee structure",
+        "college fee",
+        "tuition fees",
+        "how much is the semester fee",
+        "exam fee details",
+        "online payment of fee",
+        "installment payments of fees",
+        "late fee fine details",
+        "mode of fee payment",
+        "refund policy on fees",
+        "cost of courses",
+        "price of hostel tuition"
+      ],
+      "responses": [
+        "The tuition fee varies by course: for Engineering, it is 1,20,000 INR per year; for Management and computer applications, it is 90,000 INR per year. Fees can be paid online via debit/credit card, Netbanking, or UPI on the student portal.",
+        "Fees are collected semester-wise in two installments. Mode of payment is online or via Demand Draft. Late fee payments attract a minor penalty after the due date. Check portal.college.edu/fees for details."
+      ],
+      "suggestions": [
+        "Can I pay fees in installments?",
+        "What is the late fee penalty?",
+        "Is there a hostel fee waiver?"
+      ]
+    },
+    {
+      "tag": "scholarships",
+      "patterns": [
+        "are there scholarships",
+        "scholarship schemes",
+        "financial aid",
+        "merit scholarship details",
+        "fee waiver process",
+        "sports scholarship quota",
+        "financial assistance",
+        "government scholarship schemes",
+        "how to apply for scholarship",
+        "help for poor students",
+        "concession in tuition fees"
+      ],
+      "responses": [
+        "We offer several scholarships: Merit Scholarship (up to 50% tuition waiver for CGPA above 9.0), Category-based concessions (SC/ST/OBC as per Government policies), Sports Quota (state/national level achievers), and Need-based aid for families with annual income under 2.5 Lakhs.",
+        "Yes, students can apply for merit-cum-means scholarships at the administrative office, or apply to the Government Scholarship portal (NSP) for which our college provides bonafide verification documents."
+      ],
+      "suggestions": [
+        "What is the criteria for merit scholarship?",
+        "Who can get need-based scholarship?",
+        "How do I submit on the national portal?"
+      ]
+    },
+    {
+      "tag": "placements",
+      "patterns": [
+        "tell me about placements",
+        "job opportunities",
+        "campus placement record",
+        "top recruiters",
+        "average package scale",
+        "placement cell contact",
+        "training for placements",
+        "placement percentage stats",
+        "which companies visit for placements",
+        "highest salary package offered"
+      ],
+      "responses": [
+        "The college has a highly active Training and Placement Cell. Our consistent placement record is over 92% annually. Major recruiters include TCS, Infosys, Wipro, Amazon, Cognizant, and Accenture. The average package is 6.5 LPA, with the highest at 24 LPA.",
+        "Almost all students eligible for campus drives get placed in premium tech or core engineering roles. The placement cell organizes mock interviews, soft skill training, and coding coding bootcamps starting from the 3rd year."
+      ],
+      "suggestions": [
+        "What is the highest package?",
+        "Which companies recruit from here?",
+        "What is the average package?"
+      ]
+    },
+    {
+      "tag": "hostel",
+      "patterns": [
+        "hostel fee and accommodation",
+        "is there a hostel facility",
+        "mess charges",
+        "hostel rooms size",
+        "ac rooms in hostel",
+        "hostel rules and curfew",
+        "how to register for hostel",
+        "hostel warden details",
+        "security in hostel",
+        "boys and girls hostel",
+        "hostel food menu quality"
+      ],
+      "responses": [
+        "Hostel facilities are available for both boys and girls inside the campus. Rooms are available in Single, Double, and Triple sharing options (AC and Non-AC). Hostel fee starts from 75,000 INR per year (including mess charges). Contact the hostel desk.",
+        "Yes, Hostels are fully secure with 24/7 warden supervision, CCTV cameras, biometric systems, and an in-house medical cell. The mess provides clean, nutritious vegetarian meals three times a day along with evening high tea."
+      ],
+      "suggestions": [
+        "What are hostel curfew timings?",
+        "Are AC rooms available?",
+        "How much are mess charges?"
+      ]
+    },
+    {
+      "tag": "transportation",
+      "patterns": [
+        "bus routes and facility",
+        "is there transport facility",
+        "college bus system",
+        "bus fees and timings",
+        "pickup points list",
+        "how to travel to college",
+        "transportation charges annual",
+        "public transport near campus",
+        "bus schedule information",
+        "can i get bus from sector 5"
+      ],
+      "responses": [
+        "A fleet of 35 college buses operates across major routes in the city. The annual transport fee is 15,000 INR. Buses reach college by 8:40 AM and depart at 4:10 PM. Detailed route sheets are on the transport page.",
+        "We support transportation connecting most primary neighborhoods. For students commuting via public train/metro, shuttle services operate from the nearest Metro Station (2 km away) free of cost."
+      ],
+      "suggestions": [
+        "What are the bus timings?",
+        "Who holds transport information?",
+        "Is there transport fee waiver?"
+      ]
+    },
+    {
+      "tag": "attendance",
+      "patterns": [
+        "attendance requirements",
+        "minimum attendance criteria",
+        "attendance rule of college",
+        "what if my attendance is low",
+        "leave application format",
+        "shortage of attendance",
+        "medical leave policy",
+        "75 percent attendance mandatory",
+        "how is attendance tracked",
+        "fine for low attendance"
+      ],
+      "responses": [
+        "Students must maintain a minimum of 75% attendance in both lectures and practical sessions of each subject. Shortage of attendance will prevent you from appearing in the final exams, unless officially condoned on medical grounds.",
+        "Attendance is tracked digitally daily on the student ERP portal. Up to 10% relaxation is permitted only for severe medical emergencies, representing valid medical certificates validated by the HOD."
+      ],
+      "suggestions": [
+        "How is attendance tracked?",
+        "What happens if attendance is under 75%?",
+        "Where do I submit medical certificates?"
+      ]
+    },
+    {
+      "tag": "exams",
+      "patterns": [
+        "when are exams",
+        "exam schedule details",
+        "semester exam timetable",
+        "test schedule current",
+        "mid term exam dates",
+        "final semester exams",
+        "examination rules regulations",
+        "check exam dates online",
+        "university examinations",
+        "backlog exam schedule"
+      ],
+      "responses": [
+        "Mid-semester exams are generally scheduled in October and March. Final semester/university exams take place in December and May. Regular timetables and regulations are published on the exam board portal 3 weeks in advance.",
+        "Exams include Mid-terms (weightage 30%) and Semester Finals (weightage 70%). Reappear/backlog exams are conducted in parallel during the regular final exams schedule. Check exam portal: portal.college.edu/exams."
+      ],
+      "suggestions": [
+        "When is the next mid-term exam?",
+        "What is the exam grading system?",
+        "Where do I download admit cards?"
+      ]
+    },
+    {
+      "tag": "library",
+      "patterns": [
+        "library timings",
+        "book issue rules",
+        "library books list",
+        "library hours open",
+        "borrow books from library",
+        "return library books fine",
+        "reference book section",
+        "digital library access login",
+        "library card application",
+        "fine for late return of books",
+        "study rooms in library"
+      ],
+      "responses": [
+        "The Central Library is open from 8:00 AM to 8:00 PM on weekdays and 9:00 AM to 2:00 PM on Saturdays. Students can borrow up to 4 books for a period of 14 days, after which a fee of 5 INR per day is charged.",
+        "Our library houses over 50,000 physical volumes and provides digital lab access to IEEE, Springer, and ScienceDirect journals. You can apply for a library ID card at the desk or search available titles using the OPAC terminals."
+      ],
+      "suggestions": [
+        "How many books can I borrow?",
+        "Can I access journals online?",
+        "What is the late book return fine?"
+      ]
+    },
+    {
+      "tag": "campus_life",
+      "patterns": [
+        "tell me about campus life",
+        "campus infrastructure",
+        "student life activities",
+        "social culture in college",
+        "size of college campus",
+        "campus overview",
+        "food courts and chilling spaces",
+        "safety on college campus",
+        "sports recreation campus",
+        "virtual campus tour link"
+      ],
+      "responses": [
+        "Our campus spans 50 acres of green, Wi-Fi-enabled space equipped with smart classrooms, advanced research labs, spacious sports grounds, a gym, three food courts, and a secure environment with 24/7 CCTV surveillance.",
+        "Campus life at our college is vibrant and student-focused, striking a perfect balance between academic rigorousness and extracurricular interest, featuring regular fests, cultural nights, and tech hackathons."
+      ],
+      "suggestions": [
+        "What is the size of the campus?",
+        "Are there student recreation areas?",
+        "Is campus Wi-Fi free?"
+      ]
+    },
+    {
+      "tag": "clubs",
+      "patterns": [
+        "student clubs list",
+        "extracurricular activities",
+        "cultural clubs in college",
+        "technical clubs registration",
+        "how to join clubs",
+        "robotics club team",
+        "music club details",
+        "coding club github",
+        "drama club registration",
+        "literary debate club",
+        "join active club"
+      ],
+      "responses": [
+        "We host diverse student-led clubs! Technical: Coding and Hackathon Club, Robotics Club, Web Development League. Cultural: Music & Band, Fine Arts Guild, Drama Society, Literary and Debating Club.",
+        "Club registrations open at the beginning of each academic semester during the orientation week. Students can join up to two clubs to stay balanced. Contact the Student Welfare Office (SWO) for more information."
+      ],
+      "suggestions": [
+        "How do I register for clubs?",
+        "Is there a coding club?",
+        "What is the Student Welfare Office location?"
+      ]
+    },
+    {
+      "tag": "wifi",
+      "patterns": [
+        "connect to college wifi",
+        "wifi password campus",
+        "internet speed on campus",
+        "wifi registration portal",
+        "how to access internet wifi",
+        "hostel wifi connection",
+        "mac address registration wifi",
+        "it helpdesk wifi query",
+        "free internet service",
+        "reset wifi password portal"
+      ],
+      "responses": [
+        "High-Speed Wi-Fi (150 Mbps) is available campus-wide. To connect, register your device's MAC address at the IT support cell or submit your details online via macreg.college.edu.",
+        "Students login via their unique roll number credentials on the captive security gateway. The internet is active across academic blocks and hostels. Standard firewall rules apply (P2P downloads and torrents are blocked)."
+      ],
+      "suggestions": [
+        "How do I locate my MAC address?",
+        "Is there internet in the hostels?",
+        "What is the internet speed?"
+      ]
+    },
+    {
+      "tag": "office_timings",
+      "patterns": [
+        "office hours",
+        "when is the office open",
+        "admin office close time",
+        "timetable of college offices",
+        "registrar office hours",
+        "cash counter payment timings",
+        "lunch break in office",
+        "working days of office",
+        "visiting hours for parents",
+        "timing of administration department"
+      ],
+      "responses": [
+        "Administrative offices, cash counters, and registration wings operate from 9:00 AM to 5:00 PM, Monday through Friday, and 9:00 AM to 1:00 PM on working Saturdays. Lunch hour is observed from 1:30 PM to 2:15 PM.",
+        "The student counter office is open on all weekdays. For official documentation submission or fee clearances, try to visit before 4:00 PM to avoid queues."
+      ],
+      "suggestions": [
+        "What is the timings for cash counter?",
+        "Is the office open on Saturday?",
+        "Where is the registrar office?"
+      ]
+    },
+    {
+      "tag": "contact_details",
+      "patterns": [
+        "contact details of college",
+        "email address of college",
+        "phone number helpline",
+        "college phone numbers list",
+        "postal address of campus",
+        "contact reception desk",
+        "speak to counselor",
+        "administrative telephone line",
+        "official email query",
+        "how do i contact office"
+      ],
+      "responses": [
+        "Our main office coordinates: Phone: +91-1234567890 / 011-23456789, Email: info@college.edu. Admission enquiry: admissions@college.edu. Address: Sector 12, Knowledge Park, Capital City - 123456.",
+        "To reach specific administrative heads, please email our receptionist at registrar@college.edu or view the comprehensive directory on the main college website directories page."
+      ],
+      "suggestions": [
+        "What is the admission helpline?",
+        "Where is the campus located?",
+        "What is the college email ID?"
+      ]
+    },
+    {
+      "tag": "canteen",
+      "patterns": [
+        "college canteen location",
+        "food menu list",
+        "cafeteria food prices",
+        "places to eat near campus",
+        "hostel mess food items",
+        "canteen timings open",
+        "snacks available canteen",
+        "vegetarian food canteen",
+        "cleanliness in cafeteria",
+        "canteen menu cost"
+      ],
+      "responses": [
+        "The college runs three main cafeterias providing healthy, hygienic multi-cuisine vegetarian food, fresh juices, and quick snacks at subsidized college pricing. The main central canteen operates from 8:00 AM to 8:30 PM.",
+        "Mess menus are set by the student committee. The canteen strictly complies with food safety and hygiene regulations. Regular inspections guarantee high standards."
+      ],
+      "suggestions": [
+        "What are canteen timings?",
+        "Is the food vegetarian?",
+        "Where can I find canteen menus?"
+      ]
+    },
+    {
+      "tag": "medical_facilities",
+      "patterns": [
+        "is there a medical room",
+        "student health center location",
+        "doctor on college campus",
+        "sick room details",
+        "medical emergency help number",
+        "ambulance facility campus",
+        "medicine availability",
+        "first aid assistance",
+        "healthcare unit timing",
+        "hospital tie up info"
+      ],
+      "responses": [
+        "We have a dedicated campus Health Center open 24/7, staffed with an on-duty medical doctor and a nurse. The center supplies free basic medicines, first-aid, bed rest rooms, and an ICU-stabilization setup.",
+        "In case of extreme emergencies, the college operates a 24/7 ambulance service linked to the City Metro Hospital, which is only 2 kilometers away from the campus gates."
+      ],
+      "suggestions": [
+        "Is a doctor available 24/7?",
+        "What in case of emergency?",
+        "Where is the medical room?"
+      ]
+    },
+    {
+      "tag": "anti_ragging",
+      "patterns": [
+        "anti ragging cell",
+        "ragging helpline number",
+        "complain about seniors ragging",
+        "is ragging banned in college",
+        "safety against ragging on campus",
+        "anti ragging squad rules",
+        "anti ragging policy guidelines",
+        "harassment compliant desk",
+        "anti ragging contact detail",
+        "report ragging student safety"
+      ],
+      "responses": [
+        "Ragging is strictly banned as it is classified as a severe criminal offense. The college practices a zero-tolerance policy. Reports can be filed with the Anti-Ragging Committee on campus or the national toll-free helpline 1800-180-5522.",
+        "We have an active Anti-Ragging Squad conducting anonymous checks. If you experience or witness any form of harassment, immediately notify your HOD, Hostel Warden, or email: antiragging@college.edu."
+      ],
+      "suggestions": [
+        "What is the toll-free helpline?",
+        "How do I report anonymously?",
+        "What is the penalty for ragging?"
+      ]
+    },
+    {
+      "tag": "internships",
+      "patterns": [
+        "summer internships details",
+        "industrial training requirement",
+        "project internships semester",
+        "mandatory internship duration",
+        "stipend internship offers",
+        "internshala college partnership",
+        "internship coordinator contact",
+        "apply for noc internship",
+        "certificate of internship submit",
+        "training and internships"
+      ],
+      "responses": [
+        "Yes, internships are curricular requirements in the 3rd year for Engineering (B.Tech) and Management courses. The Placement Cell lists verified summer internships on the portal. Alternatively, students can use official platforms like Internshala.",
+        "Students must submit an internship application to the placement officer to receive an NOC (No Objection Certificate) before starting. Post-internship, a project report and certificate must be submitted to the HOD for credit evaluation."
+      ],
+      "suggestions": [
+        "Are internships mandatory?",
+        "How do I get an NOC?",
+        "Which semester do we intern?"
+      ]
+    },
+    {
+      "tag": "sports",
+      "patterns": [
+        "sports facilities available",
+        "gym in college timings",
+        "playground access hours",
+        "cricket ground booking",
+        "sports events calendar",
+        "indoor games room facility",
+        "college sports teams registration",
+        "tennis court timings",
+        "physical education director room"
+      ],
+      "responses": [
+        "Our campus has top-tier sports setups: grass fields for Football and Cricket, synthetic courts for Basketball, Lawn tennis, and Volleyball, plus a dedicated indoor stadium housing Badminton and Table Tennis tables.",
+        "A multi-station physical gym is open for all students free of cost from 6:00 AM to 8:30 AM, and 4:30 PM to 7:30 PM. The Director of Physical Education oversees student trials for college team selections."
+      ],
+      "suggestions": [
+        "What are the gym hours?",
+        "How to join the college sports team?",
+        "Is there a football field?"
+      ]
+    },
+    {
+      "tag": "results",
+      "patterns": [
+        "when will results be declared",
+        "semester exam results published",
+        "check grades online student portal",
+        "gpa cgpa calculation criteria",
+        "pass fail marks exams",
+        "result portal login link",
+        "marksheet download page",
+        "revaluation check marks",
+        "backlog result declaration date",
+        "grading system details"
+      ],
+      "responses": [
+        "Semester results are published within 30-45 days of the last exam paper. Students can view detailed grade reports on the Student Portal (portal.college.edu/results) using their enrollment numbers.",
+        "The college adopts a 10-point scale grading system. Passing criteria requires scoring a minimum of 40% in individual theory subjects (internal plus external combined) and a minimum of 5.0 SGPA overall."
+      ],
+      "suggestions": [
+        "What is the CGI/GPA pass criteria?",
+        "Where do I login to check results?",
+        "How to apply for result revaluation?"
+      ]
+    },
+    {
+      "tag": "certificate_issue",
+      "patterns": [
+        "apply for certificate",
+        "bonafide certificate format cost",
+        "migration certificate application",
+        "provisional certificate issue",
+        "transfer certificate process",
+        "get duplicate marksheet copy",
+        "transcript application process fee",
+        "degree certificate verification",
+        "official college documents request",
+        "registrar section counter apply"
+      ],
+      "responses": [
+        "Students can request certificates (such as Bonafide, Migration, Provisional, or transcripts) online via the Student Portal Document Request module. Processing takes about 3-5 business days.",
+        "Once verified and signed by the Registrar, your requested document can be collected from counter number 3 in the Admin Block. Digital softcopies are emailed for instant convenience."
+      ],
+      "suggestions": [
+        "How long does it take to get a bonafide?",
+        "Is there a fee for transcripts?",
+        "Where is the counter room?"
+      ]
+    }
+  ]
+}
