@@ -6,101 +6,215 @@ CHINGU AI is an internship-level, high-fidelity AI-based Student Query Chatbot. 
 
 ## Key Features
 
-### 🤖 Smart Chat Bot
-* **Advanced NLP Pipeline**: Tokenization, Stopword removal, and WordNet Lemmatization using NLTK.
-* **Hybrid Matching Algorithm**: Combines string similarity (sequence ratios via SequenceMatcher) with set-theory token similarities (Jaccard and Overlap Coefficients) to build robust confidence maps.
-* **Conversational Filter Triggers**: Custom match handling for greetings, farewells, gratitude, identity parameters, and help menus.
-* **Suggested Queries**: Live suggested follow-up questions render dynamically based on the bot's confidence triggers.
-* **Theme Switching**: Custom light mode and dark mode styles matching a medical/cyber-tech turquoise theme.
+# 🤖 ChinguAI
 
-### 📊 System Diagnostics Dashboard
-* **Dynamic KPI Indicators**: Track total conversations, questions asked today, median model confidence, and average system response speed.
-* **Visual Analytics Plots**: Beautifully styled Plotly charts showing:
-  - Frequency distribution of topic categories.
-  - Recognition accuracy categorizations (High, Medium, Lossy counts).
-  - Time-series performance trend lines of average response speeds.
-* **Interactive Log Table**: Search and filter through raw transaction records.
-* **Data Log Exporter**: Instantly download logs as standard CSV records or full JSON session transcripts.
+<div align="center">
+
+### 🎓 Your Smart Student Companion
+
+*A modern AI-powered Student Query Chatbot built with Streamlit, Python, and Natural Language Processing (NLP).*
+
+## 🌐 Live Demo
+
+🚀 **Try ChinguAI Here:**  
+https://studentaichatbot-vdkggdtupvq7ukgqm5yky8.streamlit.app/
+
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![NLTK](https://img.shields.io/badge/NLTK-NLP-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Live-success?style=for-the-badge)
+![License](https://img.shields.io/badge/License-Educational-blue?style=for-the-badge)
+
+</div>
 
 ---
 
-## Directory Structure
+## 📌 Project Overview
+
+ChinguAI is a modern AI-powered Student Query Chatbot designed to help students quickly access information about admissions, courses, fee structure, placements, hostel facilities, scholarships, transport, library services, and other campus-related queries.
+
+The chatbot uses Natural Language Processing (NLP) and pattern matching to understand user queries and provide predefined responses through an interactive and professional Streamlit interface.
+
+---
+
+## ✨ Features
+
+- 🤖 AI-Based Student Assistant
+- 💬 Interactive Chat Interface
+- 🌙 Dark & ☀️ Light Theme
+- 🎓 Student Query Support
+- 📚 NLP-Based Pattern Matching
+- 📖 Frequently Asked Questions
+- 💰 Fee Information
+- 🏠 Hostel Details
+- 🚌 Transport Information
+- 📅 Attendance & Exam Details
+- 🎯 Placement Information
+- 📜 Chat History
+- 🎨 Modern & Responsive UI
+- ⚡ Fast and Lightweight
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| Python | Backend Logic |
+| Streamlit | Web Application |
+| NLTK | Natural Language Processing |
+| JSON | Knowledge Base |
+| CSS | UI Styling |
+| Pandas | Data Handling |
+
+---
+
+## 📂 Project Structure
 
 ```text
 StudentAIChatbot/
-├── app.py                     # Main Streamlit web application entrypoint
-├── chatbot.py                 # Chatbot core logic class (coordinates NLP + matching + replies)
-├── config.py                  # Colors, settings, directories, default suggestions
-├── requirements.txt           # Dependency specifications
-├── README.md                  # Professional documentation for the project
-├── intents.json               # Knowledge base containing 22 categories, 11-12 patterns each
-├── chatbot_history.csv        # Auto-saved conversation logs (created programmatically)
-├── assets/                    # Image assets (Logo, Bot avatar, backgrounds)
+│
+├── app.py
+├── chatbot.py
+├── config.py
+├── intents.json
+├── requirements.txt
+├── README.md
+├── chatbot_history.csv
+│
+├── assets/
 │   ├── logo.png
-│   ├── chatbot.png
-│   └── background.jpg
+│   └── chatbot_avatar.png
+│
 ├── styles/
-│   └── style.css              # Custom styling for professional glassmorphism, chatbot UI, cards
-└── utils/
-    ├── text_processing.py     # NLTK integration: Tokenization, lemmatization, stopword cleaning
-    ├── matcher.py             # Pattern and keyword similarity matching engine (difflib/fuzzy-matching)
-    ├── history.py             # Functions to load, save, download, and export conversation history
-    └── helpers.py             # Timing, quick-suggestions, theme utilities, metric processing
+│   └── style.css
+│
+├── utils/
+│   ├── helpers.py
+│   ├── history.py
+│   ├── matcher.py
+│   └── text_processing.py
+│
+└── screenshots/
 ```
 
 ---
 
-## Installation & Setup
+## 🚀 Installation
 
-Ensure Python 3.8+ is installed on your local environment.
+### Clone the Repository
 
-### 1. Clone or Move to the Directory
-Navigate to the root project folder:
+```bash
+git clone https://github.com/jasminpucchakayala-maker/StudentAIChatbot.git
+```
+
+### Move into the Project Folder
+
 ```bash
 cd StudentAIChatbot
 ```
 
-### 2. Install Dependencies
-Install all required models and tools listed in `requirements.txt`:
+### Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
-*Note: On launch, the application will automatically check for and download necessary NLTK packages (`punkt`, `stopwords`, `wordnet`) silently without any user action.*
 
-### 3. Run the Streamlit Application
-Execute the Streamlit server:
+### Run the Application
+
 ```bash
 streamlit run app.py
 ```
 
 ---
 
-## System Architecture & NLP Workflow
+## 💡 How It Works
 
-1. **Input Cleanse**: Converts comments to lowercase, strips punctuation, and normalizes space characters.
-2. **NLTK Processing**:
-   - Tokenizes strings into isolated lexemes.
-   - Cleans connector words via localized Stopwords corpus.
-   - Normalizes verbs and plurals using `WordNetLemmatizer` (e.g. `exams` or `examining` $\to$ `exam`).
-3. **Double-Ended Match Indexing**:
-   - Compares the character-level similarity ratios using `SequenceMatcher` / `difflib`.
-   - Computes intersection metrics (Jaccard index and Overlap coefficient) to determine keyword overlap.
-   - Evaluates a weighted hybrid confidence score.
-4. **Conditional Trigger Resolution**:
-   - **Confidence >= 55%**: Selects response randomly from matched category.
-   - **Confidence between 35% and 55%**: Replies with the matches, warning the user about partial confidence levels, and displays matched suggested prompts.
-   - **Confidence < 35%**: Returns a random fallback response suggesting general categories.
-5. **Autosave Transaction Logs**: Logs execution data to `chatbot_history.csv` including timestamp, session ID, user question, response text, classification, confidence, and speed.
+1. User enters a question.
+2. Text is cleaned using NLP techniques.
+3. Pattern matching identifies the closest intent.
+4. The chatbot retrieves the appropriate response.
+5. The response is displayed in the chat interface.
+6. The conversation is stored for the current session.
 
 ---
 
-## Future Enhancements
-* **Vectorizer Integration**: Upgrade fuzzy token matching with custom TF-IDF or Word2Vec embeddings for semantic understanding.
-* **Voice Support**: Support text-to-speech feedback and speech-to-text queries.
-* **ERP Database Integration**: Connect to real-time university database servers to show individual GPA/attendance stats dynamically on credential verification.
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+> *Add screenshot here*
 
 ---
 
-## Author & License
-* **Developer**: Antigravity Dev Team & Student Intern
-* **License**: MIT License
+### 💬 Chat Interface
+
+> *Add screenshot here*
+
+---
+
+### 🌙 Dark Theme
+
+> *Add screenshot here*
+
+---
+
+### ☀️ Light Theme
+
+> *Add screenshot here*
+
+---
+
+## 🎯 Supported Topics
+
+- Admissions
+- Courses
+- Fee Structure
+- Scholarships
+- Placements
+- Hostel
+- Transport
+- Attendance
+- Library
+- Faculty
+- Internships
+- Exam Schedule
+- Campus Facilities
+- Contact Information
+
+---
+
+## 🌟 Future Enhancements
+
+- 🎤 Voice Input
+- 🔊 Text-to-Speech
+- 🌍 Multi-language Support
+- 📄 Export Chat
+- 📱 Mobile Optimization
+- 🧠 Smarter Intent Recognition
+
+---
+
+## 👩‍💻 Developer
+
+**Jasmin Pucchakayala**
+
+**Department:** Artificial Intelligence & Data Science
+
+**Project:** Minor Internship Project
+
+---
+
+## 📜 License
+
+This project is developed for educational and internship purposes only.
+
+---
+
+<div align="center">
+
+### ⭐ If you found this project helpful, consider giving it a star!
+
+**Made with ❤️ using Python & Streamlit**
+
+</div>
